@@ -18,13 +18,29 @@ public class Game {
 		int result = 0;
 		for (int i = 1; i < score.length; i++) {
 			result += score[i];
-			if (i % 2 == 1 && score[i] == 10) {
+			if (isStrike(i)) {
 				i++;
-				result += score[i + 1] + score[i + 2];
-			} else if (i % 2 == 0 && score[i - 1] + score[i] == 10) {
-				result += score[i + 1];
+				result += strikeBonus(i);
+			} else if (isSpare(i)) {
+				result += spareBonus(i);
 			}
 		}
 		return result;
+	}
+
+	private int spareBonus(int i) {
+		return score[i + 1];
+	}
+
+	private boolean isSpare(int i) {
+		return i % 2 == 0 && score[i - 1] + score[i] == 10;
+	}
+
+	private int strikeBonus(int i) {
+		return score[i + 1] + score[i + 2];
+	}
+
+	private boolean isStrike(int i) {
+		return i % 2 == 1 && score[i] == 10;
 	}
 }
