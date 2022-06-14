@@ -14,6 +14,14 @@ class BaseBallTest {
 		play("425", "789", "낫싱");
 	}
 
+	@Test
+	void invalid_input() {
+		BaseBall baseBall = new BaseBall("425");
+		assertThatThrownBy(() -> baseBall.input("1234"))
+			.isInstanceOf(IllegalArgumentException.class);
+	}
+
+
 	private void play(String computer, String player, String result) {
 		BaseBall baseBall = new BaseBall(computer);
 		baseBall.input(player);

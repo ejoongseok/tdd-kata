@@ -14,6 +14,7 @@ public class BaseBall {
 	}
 
 	public void input(String player) {
+		verifyValidInput(player);
 		char[] playerArray = player.toCharArray();
 		char[] computerArray = computer.toCharArray();
 		for (int i = 0; i < playerArray.length; i++) {
@@ -26,6 +27,11 @@ public class BaseBall {
 				}
 			}
 		}
+	}
+
+	private void verifyValidInput(String player) {
+		if(player.length() != 3)
+			throw new IllegalArgumentException();
 	}
 
 	public String result() {
