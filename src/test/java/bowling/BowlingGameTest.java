@@ -56,6 +56,18 @@ class BowlingGameTest {
 		assertThat(score).isEqualTo(16);
 	}
 
+	@Test
+	@DisplayName("볼링 게임 - 10번째 프레임 스트라이크")
+	void last_frame_strike_test() {
+		for (int i = 0; i < 9; i++) {
+			frameFor(0, 0);
+		}
+		game.roll(10);
+		frameFor(5, 3);
+		int score = game.score();
+		assertThat(score).isEqualTo(26);
+	}
+
 	void frameFor(int oneRoll, int twoRoll) {
 		game.roll(oneRoll);
 		game.roll(twoRoll);
