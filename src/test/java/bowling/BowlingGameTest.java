@@ -33,6 +33,17 @@ class BowlingGameTest {
 		assertThat(score).isEqualTo(38);
 	}
 
+	@Test
+	@DisplayName("볼링 게임 - 스트라이크")
+	void strike() {
+		game.roll(10);
+		frameFor(5, 3);
+		game.roll(10);
+		frameFor(5, 5);
+		int score = game.score();
+		assertThat(score).isEqualTo(56);
+	}
+
 	void frameFor(int oneRoll, int twoRoll) {
 		game.roll(oneRoll);
 		game.roll(twoRoll);
