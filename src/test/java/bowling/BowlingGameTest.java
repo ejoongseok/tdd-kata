@@ -13,7 +13,8 @@ class BowlingGameTest {
 	void game() {
 		Game game = new Game();
 		game.roll(1);
+		game.roll(1);
 		int score = game.score();
-		assertThat(score).isEqualTo(1);
+		assertThat(score).isEqualTo(2);
 	}
 }
