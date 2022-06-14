@@ -7,6 +7,9 @@ public class Conjured extends AbstractItem {
 
 	@Override
 	void updateQuality() {
-
+		item.sellIn -= 1;
+		if (item.quality > 0) {
+			item.quality -= 2;
+		}
 	}
 }

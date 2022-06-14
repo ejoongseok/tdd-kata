@@ -7,7 +7,7 @@ public class Standard extends AbstractItem {
 
 	@Override
 	void updateQuality() {
-		item.sellIn = item.sellIn - 1;
+		item.sellIn -= 1;
 		if (item.quality > 0) {
 			item.quality -= 1;
 		}
