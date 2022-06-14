@@ -1,6 +1,9 @@
 package baseball;
 
+import static java.util.regex.Pattern.*;
+
 import java.util.StringTokenizer;
+import java.util.regex.Pattern;
 
 public class BaseBall {
 
@@ -30,7 +33,7 @@ public class BaseBall {
 	}
 
 	private void verifyValidInput(String player) {
-		if(player.length() != 3)
+		if(!compile("^[0-9]{3}$").matcher(player).matches())
 			throw new IllegalArgumentException();
 	}
 
