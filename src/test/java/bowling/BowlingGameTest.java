@@ -67,6 +67,16 @@ class BowlingGameTest {
 		int score = game.score();
 		assertThat(score).isEqualTo(26);
 	}
+	@Test
+	@DisplayName("볼링 게임 - 10번째 프레임 스페어 또는 스트라이크가 아닌경우")
+	void last_frame_not_strike_or_spare_test() {
+		for (int i = 0; i < 9; i++) {
+			frameFor(0, 0);
+		}
+		frameFor(5, 3);
+		assertThatThrownBy(() -> game.roll(3))
+			.isInstanceOf(IllegalStateException.class);
+	}
 
 	void frameFor(int oneRoll, int twoRoll) {
 		game.roll(oneRoll);

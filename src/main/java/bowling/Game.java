@@ -7,7 +7,20 @@ public class Game {
 		if (knockedDownPins == 10 && rollCount < 19) {
 			rollCount++;
 		}
+		if (isLastFrame()) {
+			if (isLastFrameBonusPins()) {
+				throw new IllegalStateException("last frame must be a strike or spare");
+			}
+		}
 		score[rollCount++] = knockedDownPins;
+	}
+
+	private boolean isLastFrameBonusPins() {
+		return score[rollCount - 1] != 10 && score[rollCount - 1] + score[rollCount - 2] < 10;
+	}
+
+	private boolean isLastFrame() {
+		return rollCount == 21;
 	}
 
 	public int score() {
