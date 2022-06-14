@@ -18,10 +18,8 @@ class GildedRoseTest {
 			new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49),
 			new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49),
 			new Item("Backstage passes to a TAFKAL80ETC concert", 3, 0),
-			new Item("Backstage passes to a TAFKAL80ETC concert", 1, 37)
-			// ,
-			// // this conjured item does not work properly yet
-			// new Item("Conjured Mana Cake", 3, 6)
+			new Item("Backstage passes to a TAFKAL80ETC concert", 1, 37),
+			new Item("Conjured Mana Cake", 3, 6)
 		};
 
 		GildedRose app = new GildedRose(items);
@@ -59,6 +57,9 @@ class GildedRoseTest {
 		assertEquals("Backstage passes to a TAFKAL80ETC concert", app.items[9].name);
 		assertEquals(-1, app.items[9].sellIn);
 		assertEquals(0, app.items[9].quality);
+		assertEquals("Conjured Mana Cake", app.items[10].name);
+		assertEquals(1, app.items[10].sellIn);
+		assertEquals(2, app.items[10].quality);
 
 	}
 
