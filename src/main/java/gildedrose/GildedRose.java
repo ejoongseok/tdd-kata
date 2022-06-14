@@ -48,7 +48,7 @@ public class GildedRose {
 				if (!item.name.equals("Backstage passes to a TAFKAL80ETC concert")) {
 					duplicatedExtract(item);
 				} else {
-					item.quality = item.quality - item.quality;
+					item.quality = 0;
 				}
 			} else {
 				duplicateQualityExtract(item);
