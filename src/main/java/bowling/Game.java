@@ -1,11 +1,12 @@
 package bowling;
 
 public class Game {
-	public void roll(int pin) {
-
+	int score = 0;
+	public void roll(int pinOverCount) {
+		score = pinOverCount;
 	}
 
 	public int score() {
-		return 0;
+		return score;
 	}
 }

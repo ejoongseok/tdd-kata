@@ -12,8 +12,8 @@ class BowlingGameTest {
 	@DisplayName("볼링 게임")
 	void game() {
 		Game game = new Game();
-		game.roll(0);
+		game.roll(1);
 		int score = game.score();
-		assertThat(score).isEqualTo(0);
+		assertThat(score).isEqualTo(1);
 	}
 }
