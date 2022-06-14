@@ -38,6 +38,6 @@ public class BaseBall {
 				sb.append(" ");
 			sb.append(strike).append("스트라이크");
 		}
-		return sb.toString();
+		return sb.length() == 0 ? "낫싱" : sb.toString();
 	}
 }

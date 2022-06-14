@@ -11,6 +11,7 @@ class BaseBallTest {
 	void base_ball_play_test() {
 		play("425", "123", "1스트라이크");
 		play("425", "456", "1볼 1스트라이크");
+		play("425", "789", "낫싱");
 	}
 
 	private void play(String computer, String player, String result) {
