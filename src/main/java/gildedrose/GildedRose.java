@@ -13,6 +13,7 @@ public class GildedRose {
 			if (name.equals("Sulfuras, Hand of Ragnaros")) {
 				continue;
 			}
+
 			item.sellIn = item.sellIn - 1;
 			if (name.equals("Aged Brie")) {
 				duplicateQualityExtract(item);
@@ -30,21 +31,17 @@ public class GildedRose {
 					item.quality = 0;
 				}
 			} else {
-				duplicatedExtract(item);
+				if (item.quality > 0) {
+					item.quality -= 1;
+				}
 			}
-		}
-	}
-
-	private void duplicatedExtract(Item item) {
-		if (item.quality > 0) {
-			item.quality = item.quality - 1;
 		}
 	}
 
 
 	private void duplicateQualityExtract(Item item) {
 		if (item.quality < 50) {
-			item.quality = item.quality + 1;
+			item.quality += 1;
 		}
 	}
 }
