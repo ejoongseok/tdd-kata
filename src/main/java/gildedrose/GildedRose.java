@@ -9,8 +9,11 @@ public class GildedRose {
 
 	public void updateQuality() {
 		for (Item item : items) {
+			if(item.name.equals("Sulfuras, Hand of Ragnaros")) {
+				continue;
+			}
 			step1(item);
-			step2(item);
+			item.sellIn = item.sellIn - 1;
 			step3(item);
 		}
 	}
@@ -36,11 +39,6 @@ public class GildedRose {
 		}
 	}
 
-	private void step2(Item item) {
-		if (!item.name.equals("Sulfuras, Hand of Ragnaros")) {
-			item.sellIn = item.sellIn - 1;
-		}
-	}
 
 	private void step3(Item item) {
 		if (item.sellIn < 0) {
@@ -57,7 +55,7 @@ public class GildedRose {
 	}
 
 	private void duplicatedExtract(Item item) {
-		if (item.quality > 0 && !item.name.equals("Sulfuras, Hand of Ragnaros")) {
+		if (item.quality > 0) {
 			item.quality = item.quality - 1;
 		}
 	}
