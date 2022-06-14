@@ -8,12 +8,15 @@ import org.junit.jupiter.api.Test;
 class BaseBallTest {
 
 	@Test
-	void test() {
-		BaseBall baseBall = new BaseBall();
-		baseBall.input("123");
-		String result = baseBall.result();
-		assertThat(result).isEqualTo("1볼 1스트라이크");
+	void base_ball_play_test() {
+		play("425", "123", "1스트라이크");
+		play("425", "456", "1볼 1스트라이크");
+	}
 
+	private void play(String computer, String player, String result) {
+		BaseBall baseBall = new BaseBall(computer);
+		baseBall.input(player);
+		assertThat(baseBall.result()).isEqualTo(result);
 	}
 
 }
